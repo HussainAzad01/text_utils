@@ -108,4 +108,5 @@ def lower(text):
     text = text.lower()
     return text
 
-
+def remove():
+    return
