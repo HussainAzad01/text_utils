@@ -56,8 +56,12 @@ def analyze(request):
                             "<a href = '/'><p>Back</p></a>")
 
     else:
-        operation = {'purpose': purpose, 'result': after_analyzed}
-        return render(request, 'analyzed2.html', operation)
+        if charcount_checkbox != 'on':
+            operation = {'purpose': purpose, 'result': after_analyzed}
+            return render(request, 'analyzed2.html', operation)
+        else:
+            operation = {'purpose': purpose, 'result': after_analyzed + f"\nand count of character is: {count}"}
+            return render(request, 'analyzed2.html', operation)
 
 
 def remove_punc(text):
