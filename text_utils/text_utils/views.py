@@ -95,7 +95,7 @@ def extraspace(text):
 def charcount(text):
     count = 0
     for char in text:
-        if char != " ":
+        if char != "\n" and char != "\r":
             count += 1
     return count
 
